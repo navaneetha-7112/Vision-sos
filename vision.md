@@ -6,795 +6,356 @@
 
 </div>
 
-\---
 
-# {{Project Title}}
+# VISION: AN IoT AND AI ENABLED SMART SOS PUBLIC SAFETY SYSTEM
 
-\# VISION: AN IoT AND AI ENABLED SMART SOS PUBLIC SAFETY SYSTEM
-
-
+### Authors
 
 <div align="center">
 
-\*\*Navaneetha M\*\*, MCA, USN \&nbsp;·\&nbsp;
+Navaneetha M<sup>1</sup>,
+R Nataraj<sup>1</sup>,
+Sowmya J<sup>2</sup>,
+V Kamala Kannan<sup>1</sup>,
+Vijaya M<sup>2</sup>
+<br><br>
+<sup>1</sup> Master of Computer Applications (MCA)<br>
+<sup>2</sup> MSc in Big Data Analytics (MSc BDA)
 
-\*\*R Nataraj\*\*, MCA, USN \&nbsp;·\&nbsp;
+</div>
 
-\*\*Sowmya J\*\*, MSc BDA, USN \&nbsp;·\&nbsp;
+---
 
-\*\*V Kamala Kannan\*\*, MCA, USN \&nbsp;·\&nbsp;
+# Abstract
 
-\*\*Vijaya M\*\*, MSc BDA, USN
+Public safety systems frequently encounter issues with delayed emergency responses due to a lack of real-time alerting mechanisms and intelligent awareness infrastructure. Most SOS applications currently in use only send alerts to specific people or organizations and do not proactively alert individuals in the immediate vicinity of an emergency or dynamically adapt based on real-time information about unsafe areas.
 
-</div>---
+This work proposes VISION (Smart SOS Public Safety System), a comprehensive emergency response framework that combines IoT and AI technologies through mobile applications, ESP32-based smart streetlights, cloud connectivity, and machine learning analytics.
 
-## Abstract
+When a user presses the SOS button within the application, their GPS coordinates are immediately transmitted to a centralized Firebase cloud database. Nearby IoT-enabled smart streetlights switch to red emergency mode, and an audible buzzer is activated to increase public awareness. Simultaneously, police authorities receive real-time notifications through a monitoring dashboard that displays the user’s location, enabling faster emergency response.
 
-Public safety systems frequently encounter issues with late responses to emergencies due to a lack of systems for alerting about real time emergencies as well as an intelligent awareness infrastructure.    Most SOS applications currently in use only send alerts to specific people or organizations, yet do nothing to proactively alert individuals in the immediate vicinity of the emergency or dynamically alter based on real-time information about unsafe areas. This work proposes VISION (Smart SOS Public Safety System), a whole new way for providing emergency response through a combination of IoT and AI technologies involving mobile apps, smart streetlights based on the ESP32 microcontroller, the internet, and machine learning analytics.
+Additionally, AI and Machine Learning based unsafe-zone analytics using Kernel Density Estimation (KDE) heatmaps and Random Forest risk assessment models identify recurring SOS incidents, dangerous time periods, and high-risk locations based on historical emergency data.
 
+By integrating real-time IoT communication, cloud-based monitoring, smart infrastructure connectivity, and AI analytics, the proposed system creates a scalable public safety ecosystem suitable for smart city deployment. The architecture significantly reduces emergency notification response times through geographically distributed alerts and intelligent hotspot detection.
 
+### Keywords
 
-When an individual pushes the SOS button within the app, the GPS coordinates of that person will be sent at that moment to a centralized Firebase cloud data storage. Nearby IoT-enabled smart street lamps will be switched to red emergency mode, and an audible buzzer will go off to create public awareness at that very moment. Police will also be notified through the control dashboard via a real-time live emergency notification and the ability to watch and see the person’s location, allowing for quicker response to the emergency.
+Public Safety, Smart SOS System, Internet of Things (IoT), ESP32, Firebase, Smart Street Lights, Kernel Density Estimation (KDE), Random Forest, Emergency Alert System, Real-Time Monitoring, Smart City Infrastructure, Machine Learning, GPS Tracking, Police Dashboard, Unsafe-Zone Heatmaps
 
+# 1. Introduction
 
+In today's urbanized world, public safety remains a significant concern. During emergencies such as harassment, accidents, theft, or medical incidents, individuals require immediate access to assistance. Traditional emergency systems often rely on manual reporting mechanisms or isolated notifications sent through mobile devices, resulting in delayed response times and limited situational awareness.
 
-In addition, AI/ML-based unsafe-zone analytic functions using Kernel Density Estimation (KDE) heat maps and Random Forest-based risk assessments to identity repetitive SOS incidents or danger hours from historic emergency data has been implemented in order to predictively monitor the public safety risks of accidents, and to provide advanced visualisations of urban risk.
+Advancements in IoT, cloud computing, mobile technology, and machine learning have enabled the development of smart public safety infrastructures capable of real-time monitoring and automated emergency communication. Existing safety applications primarily use GPS and GSM technologies for location tracking and emergency notifications. However, these systems generally lack intelligent analytics for identifying unsafe zones and predicting risks.
 
+Recent smart city research has explored distributed IoT infrastructures, connected streetlight systems, centralized dashboards, and AI-driven hotspot detection methods. Machine learning techniques such as Kernel Density Estimation (KDE), clustering algorithms, and predictive analytics have proven effective in identifying high-risk locations and visualizing urban safety risks. Similarly, IoT-based emergency systems using ESP32 microcontrollers, GPS modules, cloud communication, and wireless alerts have demonstrated significant potential for real-time public safety applications.
 
+This work presents VISION: Smart SOS Public Safety System, an integrated emergency response ecosystem comprising a mobile SOS application, ESP32-based smart streetlights, Firebase cloud communication, police monitoring dashboards, and AI-based unsafe-zone detection. Unlike conventional systems that only notify selected contacts, the proposed solution actively alerts nearby public infrastructure through smart streetlights and buzzer systems while simultaneously providing centralized police monitoring and intelligent hotspot analysis.
 
-Through the combination of real time IoT communications, cloud-based monitoring, smart Infrastructure connectivity, and AI Analytics, a scalable public safety ecosystem, suitable for deployment in a smart city, has been created. The proposed architecture has been shown to reduce emergency notification response times substantially with the implementation of geographically distributed emergency notification and intelligent hotspot detection.
+The primary objective is to bridge the gap between emergency reporting, public awareness, and intelligent urban safety infrastructure through real-time IoT communication and data-driven analytics.
 
-\---
+# 2. Literature Review
 
-## Keywords
+The integration of IoT, machine learning, and cloud communication technologies has led to significant advancements in public safety systems. The VISION Smart SOS Public Safety System is inspired by several research studies focused on crime hotspot analytics, IoT emergency communication, smart streetlight systems, and real-time emergency monitoring.
 
-Public Safety, Smart SOS System, Internet of Things (IoT), ESP32, Firebase, Smart Street Lights, Kernel Density Estimation (KDE), Random Forest, Emergency Alert System, Real-Time Monitoring, Smart City Infrastructure, Machine Learning, GPS Tracking, Police Dashboard, Unsafe-Zone Heatmaps.
+The study "CHART: An Intelligent Crime Hotspot Detection and Real-Time Tracking Using Machine Learning" introduced a framework utilizing Kernel Density Estimation (KDE) heatmaps and Random Forest models to identify crime hotspots using historical police data. The framework enabled crime hotspot visualization and predictive risk monitoring. These techniques directly influenced the AI analytics module of the VISION system.
 
-\---
+The research "Machine Learning-Based Evaluation of IoT-Supported Smart Safety Systems for Women and Children" demonstrated how GPS tracking and GSM communication improve emergency response systems through real-time alert transmission and location tracking. The proposed VISION system adopts a similar emergency communication workflow.
 
-## 1\. Introduction
+Another relevant study, "A Distributed Multi-Tier Emergency Notification System Utilizing Sensor-Based Detection of Emergency Events for Intelligent City Applications," presented a distributed emergency response architecture using IoT sensors, GPS modules, wireless communication, and centralized monitoring systems. The findings influenced the distributed architecture of the VISION platform, integrating mobile devices, Firebase cloud services, ESP32-based smart streetlights, and police dashboards into a unified real-time communication framework.
 
-In today's world, many people are living in cities, but at the same time they are worried about how safe they will be when something happens. When there is an emergency (e.g., someone is being harassed, hurt or there is a medical emergency) you need to have a way to get help instantly. Most Emergency systems rely on people to report what is happening manually (call 911) or rely on isolated alerts sent from your mobile device to have an emergency responder dispatched to your location. Because of this, response times are much longer than what they could/should be and the nearby citizens and authorities do not have real time situational awareness.
+# 3. Problem Statement
 
+Despite advancements in public safety technology, several challenges remain:
 
+### i. Delayed Emergency Response
 
-The new technologies that have come about from IoT, Cloud computing, mobile devices, and Machine Learning can be developed into new Smart Public Safety infrastructure that can provide real time surveillance of Public Safety issues and establish automated methods of communication with Local Public Safety agencies during an emergency. Presently available Women Safety Applications and IoT Alert Devices typically will utilize GPS and GSM technologies (i.e. locating the user's device through the use of Satellite Mapping or Cellular Network) for sending/outgoing emergency alerts and notifications. However, the present Woman Safety Applications and IoT Alert Devices do not have Intelligent Analytics that can identify unsafe zones for women because the current methods used provide for static vs. dynamic alert methods.
+Most SOS systems rely on SMS or mobile notifications that may go unnoticed if recipients are not actively monitoring their devices.
 
+### ii. Lack of Public Awareness Infrastructure
 
+Existing safety applications primarily notify selected contacts without utilizing public infrastructure such as smart streetlights or audible alarms to attract immediate attention.
 
-Research regarding smart cities increasingly investigates the use of distributed IoT infrastructures (for example: connected street light systems, centralized dashboards, \& AI-based analyses of urban “hot spots” for safety improvement).  In particular, machine learning (e.g.: kernel density estimation \[KDE], clustering algorithm, predictive analytic approaches) have produced positive results in identifying crime “hot spots” and visualizing spatial risk.  Likewise, IoT-driven emergency systems (i.e.: using ESP32 microcontrollers, GPS modules, cloud-based communications, \& wireless alert systems) have demonstrated the potential for developing real-time architectures for public safety.
+### iii. Limited Analysis of Unsafe Areas
 
+Traditional systems generally lack AI-based analytics capable of identifying recurring unsafe zones, high-risk locations, and dangerous time periods.
 
+### iv. Insufficient Real-Time Monitoring
 
-This work presents VISION: Smart SOS Public Safety System, an integrated emergency response ecosystem that incorporates a mobile SOS application, ESP32-based smart street lights, Firebase for cloud-based communication, police monitoring dashboards, \& AI-based identification of dangerous locations.  Unlike traditional public safety applications that simply notify a select group of individuals, the proposed public safety system would be able to actively notify nearby public infrastructure (by activating smart street lights \& triggering buzzer alarms), while at the same time, providing centralized police monitoring \& machine learning-based detection of crime “hot spots”.
+Many emergency management systems do not provide centralized dashboards capable of tracking incidents geographically and supporting rapid emergency response.
 
+### v. Lack of Smart City Integration
 
+Most safety applications operate independently and do not integrate with IoT infrastructure, cloud services, and intelligent urban monitoring systems.
 
-The goal of this system is to facilitate the relationship between the reporting of emergencies, awareness by the public, and intelligent urban systems (through the application of real-time IoT communications) while developing data-driven analytics concerning public safety.
+To address these issues, this research proposes the VISION Smart SOS Public Safety System, integrating mobile applications, ESP32 smart streetlights, Firebase cloud communication, police dashboards, and AI-based hotspot analytics.
 
-\---
+# 4. Objectives
 
-## 2\. Literature Review
+1. Develop a mobile SOS application capable of transmitting emergency alerts and real-time GPS data.
 
-The integration of Internet of Things (IoT) capability, machine learning techniques, and cloud communication technologies has led to recent advancements in public safety systems that improve emergency response times and enhance urban safety monitoring through smart city infrastructure. The VISION Smart SOS Public Safety System was developed based on the findings of five primary research studies that investigate crime hotspot analytics, IoT emergency systems, smart street light management, and real-time emergency communication.
+2. Design and implement IoT-enabled smart streetlights using ESP32 microcontrollers, RGB LEDs, and buzzers.
 
+3. Utilize Firebase cloud services for communication between mobile devices, streetlights, and dashboards.
 
+4. Create a centralized police monitoring dashboard for real-time emergency tracking.
 
-Research described in the document "CHART: An Intelligent Crime Hotspot Detection and Real-Time Tracking Using Machine Learning" introduced the intelligent crime analytics framework. This framework uses Kernel Density Estimation (KDE) heatmaps and Random Forest models to identify crime hotspots based on historical data provided by police departments \[1]. The proposed system performs spatial crime within the framework; visualization of crime hotspots; and predictive monitoring of unsafe areas utilizing machine learning techniques. The use of KDE heatmaps effectively demonstrates how high-risk areas can be visually represented, while Random Forest models will assist in the analysis of crime patterns and the prediction of hotspots. These examples were significant influences on the AI analytics module of the proposed VISION system. The AI module of the VISION system will analyze SOS alert data to identify recurrent unsafe areas and dangerous times.
+5. Implement AI and machine learning techniques such as KDE and Random Forest for unsafe-zone analysis.
 
+6. Analyze historical SOS data to identify dangerous locations and time periods.
 
+7. Develop a scalable smart city public safety ecosystem integrating IoT, cloud computing, and intelligent analytics.
 
-The paper "The Machine Learning-Based Evaluation of IoT-Supported Smart Safety Systems for Women and Children" developed a model of how IoT devices like GPS tracking and GSM communications can improve emergency response systems \[2]. The study also showed the possibility of sending emergency alerts in real time through IoT-enabled communication. The main purpose of this study was to enhance the safety of women and children by providing them with a means of automatically communicating an emergency situation, as well as locating them in real time. The results of this study provided the inspiration for the emergency alert workflow and IoT communication architecture upon which our proposed VISION Smart SOS Public Safety System is built.
+# 5. Methodology
 
+The VISION system consists of five major components:
 
+* Mobile SOS Application
+* Firebase Cloud Database
+* ESP32 Smart Streetlights
+* Police Monitoring Dashboard
+* AI-Based Analytics Module
 
-The second supporting paper, "A Distributed Multi-Tier Emergency Notification System Utilizing Sensor-Based Detection of Emergency Events for Intelligent City Applications," \[3] presented a distributed emergency response architecture that includes IoT sensors, wireless communication systems, GPS modules, and centralized monitoring platforms for use in smart city environments. The findings of this study demonstrated how multiple IoT nodes can work together within a unified communication framework, allowing for efficient communication of emergency alerts and contributing to the management of emergencies in smart cities. The proposed distributed architecture of the proposed system will consist of a combination of mobile devices, Firebase cloud communication, ESP32-based smart street lights and police dashboards that will work together in real time.
+The workflow follows five phases:
 
-\---
+1. Emergency Detection and SOS Triggering
+2. Cloud Communication
+3. Smart Streetlight Activation
+4. Police Dashboard Monitoring
+5. AI-Based Unsafe-Zone Analysis
 
-## 3\. Problem Statement
+## 5.1 Emergency Detection and SOS Triggering
 
-Though many improvements have been made in public safety technology, many existing emergency response systems have issues limiting their overall effectiveness.
+When a user presses the SOS button:
 
+* Live GPS coordinates are captured
+* Alert timestamp is generated
+* Emergency data is transmitted to Firebase
 
+The transmitted information includes:
 
-**i.** Emergency Response is Being Delayed
+* User ID
+* Latitude
+* Longitude
+* SOS Status
+* Alert Time
 
-Current SOS Systems use a lot of SMS or Mobile Notification systems to reach out to people in emergencies. However, unless an individual is already looking at their mobile device or watches the notifications, they do not initially see them and more importantly, they do not notice they have now been sent.
+## 5.2 Communication Through Firebase
 
+Firebase Realtime Database serves as the communication backbone by:
 
+* Storing SOS alerts
+* Synchronizing updates in real time
+* Enabling communication between all system components
+* Maintaining historical records for AI analysis
 
-**ii.** Lack of Public Awareness + Public Infrastructure
+Communication Flow:
 
-The majority of safety applications that exist today are working to notify only particular contacts and are not actively working to alert other people by any visual public infrastructure (i.e., smart street lights) and audible emergency alarms.
+Mobile App → Firebase → ESP32 Streetlights & Dashboard
 
+## 5.3 Smart Streetlight Alert Activation
 
+Each smart streetlight includes:
 
-**iii.** Real-Time Analysis of Unsafe Areas
+* ESP32 Microcontroller
+* RGB LED
+* Buzzer
+* GPS Coordinates
+* Device ID
 
-Legacy systems are unable to provide any analysis of past emergency response data to identify continuous high-risk areas, risky times, or unsafe areas in urban areas using real time AI-Based Analytics methods.
+When an SOS alert is detected:
 
+1. User coordinates are compared with streetlight locations.
+2. The nearest streetlight is identified.
+3. Blue LED switches to Red Emergency Mode.
+4. Buzzer activates to attract public attention.
 
+| Mode        | LED Status | Buzzer |
+| ----------- | ---------- | ------ |
+| Normal Mode | Blue ON    | OFF    |
+| SOS Mode    | Red ON     | ON     |
 
-**iv.** Real-Time Monitoring Is Limited
+## 5.4 Police Dashboard Monitoring
 
-Some emergency management systems lack centralized dashboards that can actively track incidents geographically while also allowing for the rapid response of officers to incidents through live multimodal emergency alerts and other live monitoring options.
+The dashboard provides:
 
+* Live SOS Notifications
+* User Location Tracking
+* Emergency Timestamps
+* Streetlight Monitoring
+* Heatmap Visualization
+* Emergency History Logs
 
+Benefits include:
 
-**v.** Safety Systems Are Disconnected from Smart Cities
+* Rapid Situational Awareness
+* Incident Monitoring
+* Emergency Response Coordination
 
-For the most part, safety apps do not integrate and use available data gathered from the collection of IoT devices, cloud-based services, and advanced urban monitoring systems, all of which fall under the broad category of smart city infrastructure.
+## 5.5 AI-Based Unsafe Zone Analysis
 
+Historical Firebase data includes:
 
+* Alert Frequency
+* GPS Coordinates
+* Incident Time
+* Repeated Hotspots
 
-This research solves the previously mentioned issues by creating a “Smart SOS Public Safety System” that integrates Mobile Due Process, ESP32 Smart Street Lights, Firebase cloud based communications, Police Dashboards, and the use of AI-based hotspot analytics for the purpose of effectively monitoring safety in urban environments.
+### Kernel Density Estimation (KDE)
 
+KDE is used to generate heatmaps by:
 
+* Collecting SOS locations
+* Applying density kernels
+* Combining overlapping densities
+* Visualizing hotspot concentrations
 
-## 4\. Objectives
+Risk Levels:
 
-The primary goals of the proposed VISION Smart SOS Public Safety System include:
+* Red Zone – High Risk
+* Yellow Zone – Moderate Risk
+* Green Zone – Low Risk
 
+### Random Forest Analysis
 
+Random Forest is used to identify:
 
-(i) Creation of a mobile SOS application for real-time transmissions of SOS messages, including emergency alerts and real-time GPS location data to a centralized cloud platform.
+* Recurring unsafe times
+* Repeated incidents
+* Risk assessment patterns
+* Potential danger zones
 
+# 6. Implementation
 
+## 6.1 Hardware Implementation
 
-(ii) Design and build an IoT-enabled smart streetlight prototype using ESP32 microcontrollers, RGB LEDs and buzzer systems to create awareness of public safety emergencies.
+| Component       | Purpose               |
+| --------------- | --------------------- |
+| ESP32 / NodeMCU | Main IoT Controller   |
+| RGB LED         | Streetlight Indicator |
+| Buzzer          | Emergency Alarm       |
+| Breadboard      | Circuit Assembly      |
+| Jumper Wires    | Connections           |
+| WiFi Network    | Cloud Communication   |
 
+## 6.2 Software Implementation
 
+| Software                   | Purpose            |
+| -------------------------- | ------------------ |
+| Blynk                      | Prototype Testing  |
+| Firebase                   | Cloud Database     |
+| Arduino IDE                | ESP32 Programming  |
+| Flutter / MIT App Inventor | Mobile Application |
+| HTML, CSS, JavaScript      | Police Dashboard   |
+| Python                     | AI Analytics       |
 
-(iii) Use Firebase Cloud messaging to distribute synchronizations between the mobile app, smart streetlights, and Police Monitoring dashboard.
+## 6.3 Firebase Integration
 
+Sample Data Structure:
 
-
-(iv) Develop a centralized Police/Admin dashboard to provide Police and admin personnel the ability to view in real-time all emergency alerts, user locations, and streetlight operational status.
-
-
-
-(v) Develop AI/ML-based unsafe-zone (analytical evaluation) of heat maps using Kernel Density Estimations (KDE) and Random Forest models for hotspot detection and risk assessment.
-
-
-
-(vi) Analyze the historical data on SOS alerts to determine dangerous zones and times of the day based on identified patterns/risk metrics from an urbanization perspective.
-
-
-
-(vii) Create a scalable smart city public safety ecosystem that combines IoT infrastructure, cloud-based communications, and intelligent emergency analytics for future urban safety implementations.
-
-
-
-## 5\. Methodology
-
-VISION Smart SOS Public Safety System operates using an integrated IoT and AI-based architecture. This new system incorporates five components: the mobile SOS App; the Firebase Cloud; the smart streetlight with integrated ESP32 technology; the central police dashboard; and machine learning (ML) for hotspot analytics to support hotspot monitoring.
-
-
-
-The overall system workflow consists of five phases:
-
-
-
-1\. Emergency detection, GPS/location acquisition, and SOS trigger.
-
-2\. Cloud communication in real time.
-
-3\. Smart streetlight alert activation.
-
-4\. Police dashboard monitoring.
-
-5\. AI-based unsafe zone analytics.
-
-
-
-**5.1 Emergency Detection and SOS Triggering**
-
-
-
-The system begins with the mobile application developed for public users. During emergency situations such as harassment, accidents, thefts, or medical emergencies, the user presses the SOS button available within the application.
-
-
-
-When the SOS button is activated:
-
-1.the application captures the live GPS coordinates of the user
-
-2.timestamp and alert status are generated
-
-3.emergency data is transmitted to the Firebase Realtime Database.
-
-
-
-The transmitted data includes:
-
-1.user ID
-
-2.latitude
-
-3.longitude
-
-4.SOS status
-
-5.time of alert
-
-The mobile application acts as the primary interface between the user and the emergency response infrastructure.
-
-
-
-**5.2 Communication with Firebase Cloud**
-
-The Firebase Realtime Database is the primary means of communication for all system components.
-
-It accomplishes the following tasks:
-
-\- It stores SOS alerts
-
-\- It updates emergency status in Real Time
-
-\- It provides communication for the mobile app, the ESP32 Street Lights and Police Dashboard
-
-\- It retains all historical emergency records for AI analysis.
-
-
-
-Each time an SOS alert is generated:
-
-Mobile App → Firebase → ESP32 \& Dashboard.
-
-Firebase provides real-time updates to all connected devices without requiring manual refresh action.
-
-Alerting a Smart Street Light through an SOS Alert.
-
-
-
-**5.3 Smart Street Light Alert Activation**
-
-
-
-The IoT Layer in the smart street light is formed of ESP32 Based Smart Street Light Prototypes using (RGB) Light Emitting Diode's (LEDs) and buzzer systems.
-
-Every smart street light has:
-
-1\.a unique device ID and
-
-2\.geographic coordinates.
-
-The ESP32 Microcontroller is continually checking Firebase for SOS Alerts.
-
-
-
-When an SOS alert is received:
-
-1\.the GPS coordinates of the user who submitted the SOS alert are compared to the GPS coordinates of the smart street lights registered in the Firebase Database
-
-2\.the closest registered smart street light is determined,
-
-3\.the nearest smart street light goes from being in non-emergency blue mode to being in emergency red alert mode,
-
-4\.the buzzer or siren at the nearest smart street light will sound in order to attract public attention to assist the person who submitted the SOS alert.
-
-
-
-This improves:
-
-emergency visibility to the emergency responders
-
-the public awareness of the emergency
-
-the ability of nearby citizens to respond to the emergency.
-
-
-
-&#x20;**Mode        	LED Status   	Buzzer** 
-
-&#x20;Normal Mode 	Blue LED ON  	OFF    
-
-&#x20;SOS Mode     	Red LED ON  	ON     
-
-
-
-The ESP32 devices communicate using WiFi and Firebase cloud synchronization.
-
-
-
-
-
-**5.4 Overview of Police vs. Admin Monitoring with a Dashboard**
-
-
-
-The central monitoring of emergencies has been done through a developed Page that will show the most current emergency reports.
-
-
-
-The following are some of the abilities that it will provide for each user on the dashboard:
-
-1\.Live SOS Notifications
-
-2\.Locate User via GPS
-
-3\.Store Emergency Timestamp for Each SOS Alert
-
-4\.Locate All Active Street Lights
-
-5\.View Unsafe Areas via Heat Map
-
-6\.Show Emergency History for User
-
-
-
-When an SOS Alert is sent data goes from firebase to Police Dashboard
-
-The dashboard will automatically apply any type of data needed to aid in responding to emergencies.
-
-
-
-This Dashboard will allow for:
-
-1\.Rapid Situational Awareness
-
-2\.Monitoring Incidents
-
-3\.Coordinating Emergency Response
-
-
-
-**5.5 AI/ML Based Unsafe Zone Analysis**
-
-AI portion of the system performed analysis of past SOS alert data to identify unsafe areas and repeating patterns of emergency incidents.
-
-
-
-Historical data in Firebase contains:
-
-\- Frequency of Alerts
-
-\- GPS Coordinates
-
-\- Time of Incidents
-
-\- Repeated Hot Spot Area
-
-
-
-Two analytical methods were used:
-
-
-
-**5.5.1 Kernel Density Estimation (KDE)**
-
-
-
-Kernel Density Estimation was used to create heat map representation of Unsafe Zones.
-
-
-
-KDE process takes place through:
-
-\- Collecting GPS location data from SOS incidents
-
-\- Adding a density kernel around each incident point
-
-\- Overlapping with other density kernels
-
-\- Creating a heat map of Hot Spots.
-
-
-
-Areas of concentration (high SOS incidence) can be identified as:
-
-\- Red Zones (high risk)
-
-\- Yellow Zones (moderate risk)
-
-\- Green Zones (low risk).
-
-
-
-KDE can be used:
-
-\- To analyze emergency events spatially,
-
-\- Identify Hot Spots,
-
-\- Map visual representation of Unsafe Zones.
-
-
-
-**5.5.2 Random Forest Methodology** 
-
-
-
-The Random Forest methodology provides the following analyses for the fire service:
-
-1\.recurring unsafe times
-
-2\.repeated incidents of an emergency nature
-
-3\.risk assessment.
-
-
-
-The Random Forest methodology includes:
-
-1\.historical records of alerts
-
-2\.time sensitive incidents
-
-3\.geographic information of incidents.
-
-
-
-The outputs from the Random Forest methodology assist in identifying:
-
-periods of high risk
-
-patterns of repeated emergency responses
-
-areas of potential unsafe conditions.
-
-
-
-## 6\. Implementation
-
-The implementation of the proposed VISION Smart SOS Public Safety System is divided into hardware implementation, software implementation, cloud integration, dashboard development, and AI analytics implementation.
-
-
-
-**6.1 Hardware Implementation**
-
-The hardware prototype consists of:
-
-
-
-&#x20;**Component        Purpose**                 
-
-&#x20;ESP32 / NodeMCU  Main IoT controller     
-
-&#x20;RGB LED          Street light indication 
-
-&#x20;Buzzer           Emergency siren         
-
-&#x20;Breadboard       Circuit assembly        
-
-&#x20;Jumper Wires     Connections             
-
-&#x20;WiFi Network     Cloud communication   
-
-&#x20; 
-
-The ESP32 microcontroller is programmed using Arduino IDE and connected to Firebase through WiFi communication.
-
-
-
-**6.1.1 Smart Street Light Prototype Description**
-
-The smart street light prototype is made up of:
-
-\* a blue indicator light, which indicates the light is functioning normally
-
-\* a red indicator light, which indicates an SOS alert is currently active
-
-\* a buzzer, which notifies users with sound when an emergency is happening.
-
-
-
-The ESP32 continuously checks for SOS updates in Firebase.
-
-
-
-
-
-**6.2 Software Implementation**
-
-The software layer includes:
-
-&#x20;**Software**                    **Purpose**           
-
-&#x20;Blynk                       Prototype testing 
-
-&#x20;Firebase                    Cloud database    
-
-&#x20;Arduino IDE                 ESP32 programming 
-
-&#x20;Flutter / MIT App Inventor  Mobile app        
-
-&#x20;HTML/CSS/JS or Flutter      Police dashboard  
-
-&#x20;Python                      AI analytics      
-
-
-
-
-
-**6.2.1 Mobile Application**
-
-The mobile application includes:
-
-SOS button
-
-GPS location access
-
-emergency alert transmission
-
-user authentication
-
-
-
-**Workflow:**
-
-User presses SOS
-
-&#x20;      ↓
-
-GPS location captured
-
-&#x20;      ↓
-
-Data sent to Firebase
-
-
-
-
-
-**6.2.2 Blynk Integration**
-
-
-
-Initially, Blynk IoT platform is used for:
-
-testing LEDs
-
-testing buzzer activation
-
-verifying ESP32 cloud communication.
-
-
-
-The Blynk button controls:
-
-normal mode
-
-SOS mode
-
-
-
-**6.3 Firebase Integration**
-
-Firebase Realtime Database acts as the communication backbone.
-
-Stored data structure:
-
-
-
+```json
 {
-
-&#x20; "sos": 1,
-
-&#x20; "latitude": 12.9716,
-
-&#x20; "longitude": 77.5946,
-
-&#x20; "time": "10:45 PM"
-
+  "sos": 1,
+  "latitude": 12.9716,
+  "longitude": 77.5946,
+  "time": "10:45 PM"
 }
-
-
+```
 
 Firebase enables:
 
-1\.live synchronization
+* Live synchronization
+* Device communication
+* Dashboard updates
+* Historical data storage
 
-2\.device communication
+## 6.4 Police Dashboard Features
 
-3\.dashboard updates
+* Active SOS Alerts
+* User Location Tracking
+* Alert Timestamps
+* Emergency Status Monitoring
+* Unsafe-Zone Heatmaps
+* Emergency Logs
+* Google Maps Integration
 
-4\.historical data storage.
+## 6.5 AI Analytics
 
+Libraries Used:
 
+| Library      | Purpose              |
+| ------------ | -------------------- |
+| Pandas       | Data Processing      |
+| NumPy        | Numerical Operations |
+| Scikit-learn | Machine Learning     |
+| Folium       | Heatmap Generation   |
+| Matplotlib   | Visualization        |
 
-The selection of the nearest streetlight will consist of the following elements:
-
-1\.Receive user GPS coordinates
-
-2\.Compare these to the stored coordinates of all streetlights
-
-3\.Calculate the distance from each streetlight to the user's GPS coordinates
-
-4\.Activate the closest ESP32 device
-
-This functionality reduces non-essential alerts and will provide a more accurate indication of an emergency for a specific location.
-
-
-
-Police Dashboard Implementation.
-
-
-
-The police dashboard will show:
-
-1\.Active SOS alerts
-
-2\.The location of user(s)
-
-3\.The timestamp of the alert
-
-4\.The current status of the emergency
-
-5\.A heatmap showing unsafe areas
-
-6\.Other features include:
-
-7\.Real-time firebase updates
-
-8\.Google Maps integration
-
-9\.Emergency logs
-
-10\.Heatmap showing hotspots.
-
-
-
-
-
-**6.6 AI Analytics Implementation**
-
-Historical SOS data is exported from Firebase and analyzed using Python.
-
-&#x20;**Library       Purpose**              
-
-&#x20;Pandas        Data processing      
-
-&#x20;NumPy         Numerical operations 
-
-&#x20;Scikit-learn  ML models            
-
-&#x20;Folium        Heatmaps             
-
-&#x20;Matplotlib    Visualization        
-
-
-
-
-
-**6.6.1 KDE Heatmaps**
-
-Kernel Density Estimation generates density-based unsafe-zone maps.
-
-
+### KDE Heatmaps
 
 Input:
 
-latitude
-
-longitude
-
-alert frequency.
-
-
+* Latitude
+* Longitude
+* Alert Frequency
 
 Output:
 
-risk heatmaps.
+* Risk Heatmaps
 
-6.6.2 Random Forest Model
+### Random Forest Model
 
+Input:
 
-
-Random Forest processes:
-
-incident timing
-
-alert density
-
-historical patterns.
-
-
+* Incident Timing
+* Alert Density
+* Historical Patterns
 
 Output:
 
-risk predictions,
+* Risk Predictions
+* Hotspot Analysis
 
-repeated hotspot analysis.
-
-
-
-
-
-**6.7 Overall System Workflow**
+## 6.6 Overall System Workflow
 
 Mobile App
-
-&#x20;    ↓
-
+↓
 Firebase Cloud
-
-&#x20;    ↓
-
-ESP32 Smart Street Lights
-
-&#x20;    ↓
-
+↓
+ESP32 Smart Streetlights
+↓
 Police Dashboard
+↓
+AI Analytics & Heatmaps
 
-&#x20;    ↓
+# 7. Results and Analysis
 
-AI Analytics \& Heatmaps
+(To be completed after implementation and testing)
 
+# 8. Discussion
 
+(To be completed)
 
-The implementation demonstrates a scalable real-time public safety architecture integrating IoT communication, cloud synchronization, smart infrastructure, and machine learning-based analytics for emergency response enhancement.
+# 9. Conclusion
 
+(To be completed)
 
+# 10. Future Scope
 
+(To be completed)
 
+# Acknowledgements
 
+(To be completed)
 
+# References
 
-## 7\. Results \& Analysis
+[1] CHART: Intelligent Crime Hotspot Detection and Real-Time Tracking Using Machine Learning. Computers, Materials and Continua, Vol. 81, No. 3, 2024. DOI: 10.32604/cmc.2024.056971
 
-\---
+[2] Evaluation of IoT-Based Smart Safety Systems for Women and Children Using Machine Learning Techniques. Scientific Reports, Vol. 16, Article 87, 2026. DOI: 10.1038/s41598-025-29146-4
 
+[3] A Distributed Multi-Tier Emergency Alerting System Exploiting Sensor-Based Event Detection to Support Smart City Applications. Sensors, Vol. 20, No. 1, 2020. DOI: 10.3390/s20010170
 
+[4] Design of Smart LED Streetlight System for Smart City with Web-Based Management System. International Journal of Scientific & Technology Research (IJSTR).
 
-
-
-
-
-
-
-## 8\. Discussion
-
-\---
-
-
-
-
-
-
-
-## 9\. Conclusion
-
-\---
-
-
-
-
-
-## 10\. Future Scope
-
-\---
-
-
-
-
-
-## Acknowledgements
-
-
-
-
-
-
-
-## References
-
-\[1] CHART: Intelligent Crime Hotspot Detection and Real-Time Tracking Using Machine Learning, Computers, Materials and Continua, vol. 81, no. 3, pp. 4171–4194, 2024. DOI: 10.32604/cmc.2024.056971.
-
-
-
-\[2] Evaluation of IoT Based Smart Safety Systems for Women and Children using Machine Learning Techniques, Scientific Reports, vol. 16, Article 87, 2026. DOI: 10.1038/s41598-025-29146-4.
-
-
-
-\[3] A Distributed Multi-Tier Emergency Alerting System Exploiting Sensors-Based Event Detection to Support Smart City Applications, Sensors, vol. 20, no. 1, p. 170, 2020. DOI: 10.3390/s20010170.
-
-
-
-\[4] “Design of Smart LED Streetlight System for Smart City with Web-Based Management System,” International Journal of Scientific \& Technology Research (IJSTR), Smart City and IoT-based Streetlight Management Research Paper.
-
-
-
-\[5] “Developing Real-Time IoT-Based Public Safety Alert and Emergency Response Systems,” Journal/Conference Paper on IoT-based Emergency Communication and Public Safety Systems.
-
+[5] Developing Real-Time IoT-Based Public Safety Alert and Emergency Response Systems. Journal/Conference Paper on IoT-Based Emergency Communication and Public Safety Systems.
