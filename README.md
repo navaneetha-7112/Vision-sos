@@ -333,8 +333,15 @@ AI Analytics & Heatmaps
 (To be completed after implementation and testing)
 
 # 8. Discussion
+The Vision SOS project provides a solution for helping  people when they need it most by utilizing the existing infrastructure of street lights to create an emergency response system. Instead of relying on traditional means of communication, this project implements an emergency response system composed of Internet of Things (IoT) devices, cloud computing, and location-based services in order to create a system that is responsive to help keep people safe.
 
-(To be completed)
+The Vision SOS system has the unique ability to automatically locate the closest streetlight to the user’s location and activate it. Through this function, it reduces the amount of time it would take for someone who needs emergency assistance to get the help they need, by increasing the visibility of individuals in distress.
+
+The integration of the Firebase Realtime Database allows for the real-time sharing of data between citizens, emergency responders, and other stakeholders while providing centralized coordination for monitoring purposes. Additionally, the use of ESP-NOW communication allows for low-power, low-latency communication between the IoT devices.
+
+However, there are some limitations to the prototype implementation that were evident during the building of the prototype, limitations include: communication reliability may be impacted due to varying channels and wireless interference, the prototype currently uses a limited amount of streetlights, but for large-scale implementation would require more robust networking infrastructure and better management schemes.
+
+Although the system has experienced some limitations, the evidence that was collected indicates that the architecture of the Vision SOS system is appropriate for use in real-world smart city applications and, furthermore, improved public safety.
 
 # 9. Conclusion
 
@@ -342,11 +349,36 @@ AI Analytics & Heatmaps
 
 # 10. Future Scope
 
-(To be completed)
+System Integration with Emergency Services 
+Direct connection between the system and law enforcement agencies, hospitals, and emergency response centers will allow for automatic dispatch of assistance when needed. 
+
+AI Risk Prediction
+Artificial intelligence and predictive analytics will be utilized in identifying high-risk areas and predicting new areas where emergencies may occur.
+
+Computer Vision Integration
+Incorporation of computer vision in conjunction with surveillance cameras may provide for automatic detection (identification) of events.
+
+Deployment of Cities with Numerous Smart Lights
+Extend the system to accommodate many (hundreds or thousands) of intelligent city streetlights through municipal areas.
+
+Advanced Technologies of Communication
+Utilize communication protocols including LoRaWAN, MQTT, and 5G to boost reliability, scalability, & coverage of the network.
+
+Wearables and Sensor-Enabled Devices
+Automatic SOS creation with wearables/sensors due to accidents or medical emergencies will be feasible.
+
+Geographic Information Systems (GIS)-Based Visualization
+Geo-spatial data will be utilized to create rich maps, visualize what’s happening in real time within a city, & provide the means to manage city-wide emergencies.
 
 # Acknowledgements
 
-(To be completed)
+We would like to express their sincere gratitude to St. Joseph University and the Department of Computer Science for providing us this opportunity and academic environment and resources essential to this intership . Special thanks to Fr. Denzil Lobo, Director of the School of IT,for his visionary leadership and encouragement throughout the project.
+
+We extend heartfelt appreciation to their internship providers, ERA Foundation and ComedKares,whose practical exposure and mentorship significantly contributed to the development of this work.
+
+Sincere thanks are also due to the faculty members and project mentors for their continuous guidance and support throughout the development of this research.
+
+We would further acknowledge the support provided by the open-source communities and technology platforms including Flutter, Firebase,Arduino IDE, and related development frameworks that facilitated the implementation of the proposed system.
 
 # References
 
