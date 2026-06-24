@@ -349,7 +349,7 @@ The current state of Vision SOS and the execution of that product using a protot
 
 As shown in Figure 1, the distribution of SOS alerts varies throughout the day, with a significant concentration of incidents occurring between 10:00 AM and 3:00 PM. The highest number of alerts was recorded at 11:00 AM, indicating a peak period of emergency activity.
 
-![SOS Alerts Per Hour](images/graph1.png)
+![SOS Alerts Per Hour](results1.png)
 
 **Figure 1. SOS Alerts per Hour (Peak: 11:00 AM)**
 
@@ -365,7 +365,7 @@ As shown in Figure 1, the distribution of SOS alerts varies throughout the day, 
 
 Figure 2 presents the distribution of SOS alerts recorded across different days of the week. The analysis reveals noticeable variations in emergency occurrences, indicating that incident frequency is not uniform throughout the week.
 
-![SOS Count by Day](images/graph2.png)
+![SOS Count by Day](result3.png)
 
 **Figure 2. SOS Count by Day (Peak: Tuesday)**
 
@@ -375,6 +375,22 @@ Figure 2 presents the distribution of SOS alerts recorded across different days 
 * Thursday and Monday also exhibited relatively high emergency activity.
 * Wednesday and Friday recorded comparatively fewer incidents.
 * The results indicate that SOS incidents are unevenly distributed across the week, highlighting specific periods that may require increased monitoring and resource allocation.
+
+  ## C. Streetlight Proximity Activation Analysis
+
+Figure 3 illustrates the activation frequency of smart streetlights selected by the proximity-based decision-making algorithm. The results demonstrate the effectiveness of the nearest-streetlight selection mechanism implemented in the proposed system.
+
+![Streetlight Activation Frequency](results2.png)
+
+**Figure 3. Streetlight Proximity Activation Frequencies**
+
+### Observations
+
+* Streetlight SL1 recorded the highest number of activations, with 360 emergency responses.
+* Streetlight SL2 was activated only a small number of times, indicating fewer incidents within its coverage region.
+* A limited number of incidents occurred without a nearby streetlight assignment.
+* The proximity-based selection algorithm successfully identified and activated the closest available streetlight, ensuring efficient emergency response and improved incident visibility.
+
 
 ## D. System Performance Evaluation
 
