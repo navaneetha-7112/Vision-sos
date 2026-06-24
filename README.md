@@ -349,7 +349,7 @@ The current state of Vision SOS and the execution of that product using a protot
 
 As shown in Figure X below, the distribution of SOS alerts differs by hour, with a large concentration of incidents occurring between 10:00 am and 3:00 pm, peaking at 11:00 am.
 
-![SOS Alerts per Hour](images/sos_alerts_per_hour.png)
+![SOS Alerts per Hour](images/results1.png)
 *Figure X: SOS Alerts per Hour (Peak: 11:00 AM)*
 
 **Observations:**
@@ -362,7 +362,7 @@ As shown in Figure X below, the distribution of SOS alerts differs by hour, with
 
 The data in Figure Y outlines the number of SOS alerts recorded by day of the week.
 
-![SOS Count by Day](images/sos_count_by_day.png)
+![SOS Count by Day](images/result3.png)
 *Figure Y: SOS Count by Day (Peak: Tuesday)*
 
 **Findings:**
@@ -375,7 +375,7 @@ The data in Figure Y outlines the number of SOS alerts recorded by day of the we
 
 Figure Z displays how many times each smart streetlight selected by the proximity-based decision engine was activated.
 
-![Streetlight Proximity Activation Frequencies](images/streetlight_proximity_activation.png)
+![Streetlight Proximity Activation Frequencies](images/results2.png)
 *Figure Z: Streetlight Proximity Activation Frequencies*
 
 **Findings:**
