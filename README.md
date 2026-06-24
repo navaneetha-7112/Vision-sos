@@ -347,42 +347,34 @@ The current state of Vision SOS and the execution of that product using a protot
 
 ## A. Analysis of All SOS Alerts per Hour
 
-As shown in Figure X below, the distribution of SOS alerts differs by hour, with a large concentration of incidents occurring between 10:00 am and 3:00 pm, peaking at 11:00 am.
+As shown in Figure 1, the distribution of SOS alerts varies throughout the day, with a significant concentration of incidents occurring between 10:00 AM and 3:00 PM. The highest number of alerts was recorded at 11:00 AM, indicating a peak period of emergency activity.
 
-![SOS Alerts per Hour](images/results1.png)
-*Figure X: SOS Alerts per Hour (Peak: 11:00 AM)*
+![SOS Alerts Per Hour](images/graph1.png)
 
-**Observations:**
-- The peak for SOS alert occurrence was at 11:00 am (72 incidents).
-- SOS alert occurrences from 1:00 pm to 3:00 pm were numerous.
-- Relatively few occurrences were recorded during late-night and early-morning hours.
-- Temporal analytics can help determine the time period in which SOS incidents occur most often, aiding safety planning for high-risk situations.
+**Figure 1. SOS Alerts per Hour (Peak: 11:00 AM)**
+
+### Observations
+
+* The highest number of SOS alerts was observed at 11:00 AM, with 72 recorded incidents.
+* Alert frequency remained relatively high between 1:00 PM and 3:00 PM.
+* Very few incidents were reported during late-night and early-morning hours.
+* The observed temporal pattern can assist authorities in identifying high-risk periods and improving resource allocation for emergency response.
+
 
 ## B. SOS Count by Day Analysis
 
-The data in Figure Y outlines the number of SOS alerts recorded by day of the week.
+Figure 2 presents the distribution of SOS alerts recorded across different days of the week. The analysis reveals noticeable variations in emergency occurrences, indicating that incident frequency is not uniform throughout the week.
 
-![SOS Count by Day](images/result3.png)
-*Figure Y: SOS Count by Day (Peak: Tuesday)*
+![SOS Count by Day](images/graph2.png)
 
-**Findings:**
-- The highest number of SOS alerts was recorded on Tuesdays (110).
-- Significant SOS activity was also recorded on Thursdays and Mondays.
-- Fridays and Wednesdays had fewer SOS alerts than other days.
-- SOS incidents are not evenly distributed across the days of the week.
+**Figure 2. SOS Count by Day (Peak: Tuesday)**
 
-## C. Streetlight Proximity Activation Analysis
+### Observations
 
-Figure Z displays how many times each smart streetlight selected by the proximity-based decision engine was activated.
-
-![Streetlight Proximity Activation Frequencies](images/results2.png)
-*Figure Z: Streetlight Proximity Activation Frequencies*
-
-**Findings:**
-- SL1 was activated the most (360 times).
-- SL2 was activated only 5 times.
-- The majority of events had no streetlight within close proximity to the incident.
-- The nearest-node selection algorithm performs effectively in selecting and activating the closest available emergency response unit.
+* The highest number of SOS alerts was recorded on Tuesday, with 110 incidents.
+* Thursday and Monday also exhibited relatively high emergency activity.
+* Wednesday and Friday recorded comparatively fewer incidents.
+* The results indicate that SOS incidents are unevenly distributed across the week, highlighting specific periods that may require increased monitoring and resource allocation.
 
 ## D. System Performance Evaluation
 
